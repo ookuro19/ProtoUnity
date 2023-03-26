@@ -1,0 +1,19 @@
+syntax = "proto3"; //使用proto3语法编译
+
+package Chat; 
+
+message ChatMsg
+{
+    int64 id = 1;    // classify id
+    int64 time = 2;  // created timestamp
+    int64 from = 3;  // from id
+    string msg = 4;  // msg content
+    string name = 5; // backup name
+}
+
+message ChatPlayer
+{
+    int64 id = 1;   // player id
+    int64 time = 2; // last chat timestamp
+    string name = 3; // msg content
+}
