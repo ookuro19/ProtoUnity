@@ -13,7 +13,7 @@ namespace Framework
         {
             get
             {
-                return System.Text.Encoding.UTF8.GetBytes("d");
+                return System.Text.Encoding.UTF8.GetBytes("dddddddd");
             }
         }
 
@@ -21,7 +21,7 @@ namespace Framework
         {
             get
             {
-                byte[] iv = { 0xAB };
+                byte[] iv = { 0xAB, 0xAB, 0xAB, 0xAB, 0xAB, 0xAB, 0xAB, 0xAB };
                 return iv;
             }
         }
