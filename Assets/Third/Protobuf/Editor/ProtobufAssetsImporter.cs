@@ -56,7 +56,7 @@ namespace ProtoBuf.Editor
         /// </summary>
         internal static void CompileAllProtos()
         {
-            Debug.Log("===== Protobuf Compile Begin ===");
+            Debug.Log("======= Protobuf Compile Begin ======");
 
             foreach (string file in AllProtoFiles)
             {
@@ -64,7 +64,7 @@ namespace ProtoBuf.Editor
                 CompileProtobufSingleFile(file);
             }
             AssetDatabase.Refresh();
-            Debug.Log("===== Protobuf Compile Finish ===");
+            Debug.Log("======= Protobuf Compile Finish ======");
         }
 
         /// <summary>
@@ -76,6 +76,7 @@ namespace ProtoBuf.Editor
             if (Path.GetExtension(protoFilePath) != Proto_Asset_Extension)
                 return false;
 
+            Debug.Log($"------ Protobuf Compile Begin: {protoFilePath} ------");
             string outputPath = Path.GetDirectoryName(protoFilePath);
 
             string protoFolderPath = Path.GetDirectoryName(protoFilePath);
@@ -98,12 +99,11 @@ namespace ProtoBuf.Editor
                 Debug.Log("Protobuf Output : " + output);
             }
 
-            Debug.Log("Protobuf Compiled " + protoFilePath);
-
             if (error != "")
             {
                 Debug.LogError("Protobuf Error: " + error);
             }
+            Debug.Log($"------ Protobuf Compile Finish: {protoFilePath} ------");
             return true;
         }
     }
